@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="@dimen/_20sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pdf_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/pdf_image"
+                tools:text="FileName" />
+
+            <Button
+                android:id="@+id/btnDownload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/download"
+                app:layout_constraintTop_toBottomOf="@id/fileName" />
+
+            <include
+                android:id="@+id/progressBar"
+                layout="@layout/progress"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
